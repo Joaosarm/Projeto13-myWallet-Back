@@ -1,6 +1,5 @@
 import cors from "cors";
 import dotenv from "dotenv";
-import chalk from "chalk";
 import express, {json} from "express";
 dotenv.config();
 
@@ -15,4 +14,6 @@ app.use(authorizationRouter);
 app.use(transactionsRouter);
 
 
-app.listen(process.env.PORTA, console.log(chalk.blue.bold("Servidor Funcionando!")));
+app.listen(process.env.PORT, () => {
+    console.log("Server running on port " + process.env.PORT);
+});
